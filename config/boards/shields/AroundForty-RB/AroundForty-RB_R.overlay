@@ -31,21 +31,24 @@
         // scroll-x-invert;
     };
 
-    trackball_listener: trackball_listener {
+trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        
+        /* 通常時の動作設定 */
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
-                           <&zip_xy_scaler 1 1>;
-                           /* AMLを有効にしたい場合は下のコメントを外してください */
-                           // <&zip_temp_layer 9 300>;
+                           <&zip_xy_scaler 1 1>,
+                           /* レイヤー5をAML（自動復帰レイヤー）として使用 */
+                           <&zip_temp_layer 5 300>; 
 
+        /* スクロールモードの設定 */
         scroll-layer {
-            layers = <6 7>;
+            /* レイヤー6にいる間だけ、トラックボールをスクロール動作にする */
+            layers = <6>; 
             input-processors = <&zip_xy_to_scroll_mapper>, 
                                <&zip_scroll_scaler 1 45>;
         };
     };
-};
 
 &pinctrl {
     spi0_default: spi0_default {
