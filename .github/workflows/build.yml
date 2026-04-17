@@ -1,8 +1,6 @@
 on: [push, pull_request, workflow_dispatch]
 
-# ここに環境変数を追加します
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 
 jobs:
   build:
