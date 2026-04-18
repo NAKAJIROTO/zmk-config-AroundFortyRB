@@ -45,7 +45,7 @@ trackball_listener: trackball_listener {
         scroll-layer {
             /* レイヤー6にいる間だけ、トラックボールをスクロール動作にする */
             layers = <5>; 
-            input-processors = <&zip_xy_to_scroll_mapper_tune>>, 
+            input-processors = <&zip_xy_to_scroll_mapper_tune>, 
                                <&zip_scroll_scaler 1 45>;
         };
     };
