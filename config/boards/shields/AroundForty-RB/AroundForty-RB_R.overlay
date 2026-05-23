@@ -20,29 +20,28 @@
 
 
 / {
-    /* スクロール方向をいつでも反転できるようにするための設定 */
-    /* 反転させたい場合は compatible を "zmk,input_processor_xy_to_scroll" に変え、*/
-    /* 下の scroll-layer のマッパー参照先を &zip_xy_to_scroll_mapper_tune に変更してください */
     zip_xy_to_scroll_mapper_tune: zip_xy_to_scroll_mapper_tune {
         compatible = "zmk,input_processor_xy_to_scroll";
         #input-processor-cells = <0>;
-        /* 必要に応じてコメントを外して反転 */
-        // scroll-y-invert;
+
+        scroll-y-invert;
         // scroll-x-invert;
     };
 
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
                            <&zip_xy_scaler 1 1>,
-                           /* AMLを有効にしたい場合は下のコメントを外してください */
-                            <&zip_temp_layer 4 300>;
+                           <&zip_temp_layer 4 300>;
 
         scroll-layer {
-           layers = <5>; // スクロールをレイヤー5に設定
-            input-processors = <&zip_xy_to_scroll_mapper>, 
-                               <&zip_scroll_scaler 1 45>;
+            layers = <5>;
+
+            input-processors =
+                <&zip_xy_to_scroll_mapper_tune>,
+                <&zip_scroll_scaler 1 45>;
         };
     };
 };
