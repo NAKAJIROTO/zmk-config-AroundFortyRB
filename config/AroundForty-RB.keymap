@@ -147,7 +147,7 @@
             >;
         };
 
-        layer_4 {
+            MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans    &mo 5
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &mkp MB2  &trans
@@ -156,7 +156,7 @@
             >;
         };
 
-        layer_5 {
+        SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
