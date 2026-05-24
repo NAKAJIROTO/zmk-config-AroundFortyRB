@@ -16,6 +16,38 @@
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
         };
+
+        RIGHT1 {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <17 8>;
+        };
+
+        BS {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <16 7>;
+        };
+
+        KANA {
+            bindings = <&kp LA(GRAVE)>;
+            key-positions = <3 4>;
+        };
+
+        CAPSS {
+            bindings = <&kp CAPS>;
+            key-positions = <13 14>;
+        };
+
+        MO1 {
+            bindings = <&mo 1>;
+            key-positions = <5 6>;
+            layers = <0>;
+        };
+
+        MO0 {
+            bindings = <&mo 0>;
+            key-positions = <5 6>;
+            layers = <1>;
+        };
     };
 
     macros {
@@ -155,10 +187,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &trans    &mo 5
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans    &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans
+&trans  &trans  &trans    &trans    &trans          &trans  &trans  &trans    &trans    &mo 5
+&trans  &trans  &mkp MB1  &mkp MB2  &trans          &trans  &trans  &trans    &mkp MB2  &trans
+&trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &mkp MB1  &trans    &trans
+&trans  &trans  &trans    &trans    &trans  &mo 5   &trans  &trans  &trans    &trans    &trans
             >;
         };
 
