@@ -131,17 +131,17 @@
         NUM {
             display-name = "1";
             bindings = <
-&kp EQUAL  &kp KP_PLUS  &kp KP_MINUS  &kp ASTRK  &kp NUBS                      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp P
-&entent    &kp LEFT     &kp UP        &kp RIGHT  &kp F9                        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &oo           &trans
-&kp LC(F)  &cal         &kp LC(C)     &kp LC(V)  &kp LC(SINGLE_QUOTE)  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &trans
-&trans     &trans       &trans        &trans     &trans                &trans  &trans        &trans        &lt 5 DOWN    &trans        &trans
+&kp EQUAL  &kp KP_PLUS  &kp KP_MINUS  &kp KP_ASTERISK  &kp KP_DIVIDE                 &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp KP_SLASH
+&entent    &kp LEFT     &kp UP        &kp RIGHT        &kp F9                        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &oo           &trans
+&kp LC(F)  &cal         &kp LC(C)     &kp LC(V)        &kp LC(SINGLE_QUOTE)  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans        &trans
+&trans     &trans       &trans        &trans           &trans                &trans  &trans        &trans        &lt 5 DOWN    &trans        &trans
             >;
         };
 
         FUNCTION {
             display-name = "2";
             bindings = <
-&kp AT_SIGN   &kp UNDERSCORE  &kp EXCLAMATION       &kp HASH              &kp LC(DOLLAR)                 &kp F1            &kp F2    &kp F3     &kp F4     &kp F5
+&kp AT_SIGN   &kp UNDERSCORE  &kp EXCLAMATION       &kp HASH              &kp DOLLAR                     &kp F1            &kp F2    &kp F3     &kp F4     &kp F5
 &kp PERCENT   &kp QUESTION    &kp AMPERSAND         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6            &kp F7    &kp F8     &kp F9     &kp F10
 &kp ASTERISK  &kp PIPE        &kp NON_US_BACKSLASH  &kp SQT               &kp DOUBLE_QUOTES      &trans  &kp LEFT_BRACKET  &kp SEMI  &kp COLON  &kp COMMA  &kp DOT
 &trans        &trans          &trans                &trans                &trans                 &trans  &trans            &trans    &trans     &trans     &trans
@@ -151,10 +151,10 @@
         ARROW {
             display-name = "3";
             bindings = <
-&sum            &kp PRINTSCREEN  &kp LG(C)    &kp LG(V)  &kp LG(D)             &kp LESS_THAN         &kp GREATER_THAN       &kp CARET        &kp PERCENT    &kp DOLLAR
-&kp TAB         &kp LEFT_GUI     &kp LS(TAB)  &mkp MB1   &mkp MB2              &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN      &kp AMPERSAND  &kp DOUBLE_QUOTES
-&kp LEFT_SHIFT  &trans           &trans       &trans     &mkp MB3   &kp LG(R)  &jp_kakko             &kp RIGHT_BRACKET      &kp EXCLAMATION  &kp QUESTION   &kp SINGLE_QUOTE
-&kp LCTRL       &trans           &trans       &trans     &trans     &trans     &trans                &trans                 &kp BACKSPACE    &kp ENTER      &kp HASH
+&sum    &kp PRINTSCREEN  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -171,7 +171,7 @@
             bindings = <
 &trans       &trans  &trans  &trans  &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans
 &trans       &trans  &trans  &trans  &trans          &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &trans  &trans
-&trans       &trans  &trans  &trans  &trans  &trans  &bootloader   &trans        &trans        &trans  &trans
+&trans       &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans  &trans
 &bootloader  &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans  &bootloader
             >;
         };
