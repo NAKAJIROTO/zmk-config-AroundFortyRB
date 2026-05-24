@@ -113,12 +113,15 @@
             bindings = <&kp LA(LC(S)) &kp U &kp M>;
             label = "SUM";
         };
+jp_kakko: jp_kakko {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
 
-        jp_kakko: jp_kakko {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(N2) &kp LS(N3) &kp LEFT>;
-        };
+    bindings =
+        <&kp AT>,
+        <&kp LBKT>,
+        <&kp LEFT>;
+};
     };
 
     behaviors {
