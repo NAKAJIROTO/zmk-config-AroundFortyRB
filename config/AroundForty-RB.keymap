@@ -58,8 +58,6 @@
             label = "TO_LAYER_0";
         };
 
-
-
         oo: OO {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -87,15 +85,12 @@
             bindings = <&kp LA(LC(S)) &kp U &kp M>;
             label = "SUM";
         };
-jp_kakko: jp_kakko {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
 
-    bindings =
-        <&kp LS(LBKT)>,
-        <&kp LS(RBKT)>,
-        <&kp LEFT>;
-};
+        jp_kakko: jp_kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT) &kp LS(RBKT) &kp LEFT>;
+        };
     };
 
     behaviors {
@@ -165,7 +160,7 @@ jp_kakko: jp_kakko {
         MOUSE {
             bindings = <
 &trans  &trans  &trans    &trans    &trans          &trans  &trans  &trans    &trans    &mo 5
-&trans  &trans  &mkp MB1  &mkp MB2  &trans          &trans  &trans  &trans    &mkp MB2  &trans
+&trans  &trans  &mkp MB1  &mkp MB2  &trans          &trans  &trans  &mkp MB1  &mkp MB2  &mo 5
 &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &mkp MB1  &trans    &trans
 &trans  &trans  &trans    &trans    &trans  &mo 5   &trans  &trans  &trans    &trans    &trans
             >;
@@ -186,7 +181,6 @@ jp_kakko: jp_kakko {
 #define U_MOUSE_MOVE_EXPONENT 1
 #define U_MOUSE_MOVE_TIME 600
 #define U_MOUSE_MOVE_DELAY 0
-
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 25
 #define U_MOUSE_SCROLL_EXPONENT 1
 #define U_MOUSE_SCROLL_TIME 4500
