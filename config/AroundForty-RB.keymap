@@ -118,8 +118,8 @@ jp_kakko: jp_kakko {
     #binding-cells = <0>;
 
     bindings =
-        <&kp AT>,
-        <&kp LBKT>,
+        <&kp LS(LBKT)>,
+        <&kp LS(RBKT)>,
         <&kp LEFT>;
 };
     };
