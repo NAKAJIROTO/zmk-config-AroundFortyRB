@@ -18,7 +18,6 @@
         ;
 };
 
-
 / {
 
     trackball_listener: trackball_listener {
@@ -27,19 +26,21 @@
 
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
-            <&zip_xy_scaler 1 2>,
-            <&zip_temp_layer 4 2000>;
+            <&zip_xy_scaler 1 1>;
+    };
 
-scroll-layer {
-    layers = <5>;
+    scroll_layer {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
 
-    input-processors =
-        <&zip_xy_transform
-            (INPUT_TRANSFORM_Y_INVERT |
-             INPUT_TRANSFORM_X_INVERT)>,
-        <&zip_xy_to_scroll_mapper>,
-        <&zip_scroll_scaler 1 45>;
-};
+        layers = <4>;
+
+        input-processors =
+            <&zip_xy_transform
+                (INPUT_TRANSFORM_Y_INVERT |
+                 INPUT_TRANSFORM_X_INVERT)>,
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_scaler 1 60>;
     };
 };
 
@@ -62,26 +63,35 @@ scroll-layer {
     };
 };
 
-&xiao_serial { status = "disabled"; };
+&xiao_serial {
+    status = "disabled";
+};
 
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
+
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
+
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 
     trackball: trackball@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
+
         reg = <0>;
         spi-max-frequency = <2000000>;
+
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        cpi = <800>;
+
+        cpi = <600>;
+
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
         force-awake;
     };
 };
