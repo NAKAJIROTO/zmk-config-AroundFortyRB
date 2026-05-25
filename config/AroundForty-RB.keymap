@@ -128,11 +128,11 @@
             quick-tap-ms = <0>;
             require-prior-idle-ms = <150>;
 
-            bindings = <&mo>, <&to_layer_0>;
+            /* 修正 */
+            bindings = <&mo>, <&to>;
         };
     };
 };
-        // 
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
