@@ -32,17 +32,24 @@
 
 
 
+&spi0 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
 
-/ {
+    cs-gpios = <&xiao_d 1 GPIO_ACTIVE_LOW>;
 
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
+    trackball: trackball@0 {
+        compatible = "pixart,pmw3610";
 
-        input-processors =
-            <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
-            <&zip_xy_scaler 1 2>,
-            <&zip_temp_layer 4 2000>;
+        reg = <0>;
+
+        spi-max-frequency = <2000000>;
+
+        irq-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+        status = "okay";
+    };
+};
 
 scroll-layer {
     layers = <5>;
