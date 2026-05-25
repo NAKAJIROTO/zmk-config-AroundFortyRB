@@ -51,6 +51,11 @@
             key-positions = <5 6>;
             layers = <1>;
         };
+
+        hiiii {
+            bindings = <&kp A>;
+            key-positions = <28 18 9>;
+        };
     };
 
     macros {
@@ -95,7 +100,6 @@
             bindings = <&kp LS(LBKT) &kp LS(RBKT) &kp LEFT>;
         };
     };
-
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
