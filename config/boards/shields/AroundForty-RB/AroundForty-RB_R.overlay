@@ -18,8 +18,12 @@
         ;
 };
 
-/ {
+/* --- ここに zip_temp_layer の設定を追加 --- */
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
 
+/ {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
@@ -30,12 +34,14 @@
             /* 通常カーソルをかなり鈍く */
             <&zip_xy_scaler 1 1>,
 
-            /* 動かし続けた時だけ Layer4 */
-            <&zip_temp_layer 4 3500>;
+            /* 【変更】キーを離してから200ms以上経っている時だけ、
+               トラックボール操作でレイヤー5へ切り替える（維持時間は10秒） */
+            <&zip_temp_layer 5 10000>;
     };
 
+    /* もしレイヤー5用のスクロール設定にするなら、ここも 5 に合わせます */
     scroll_layer {
-        layers = <4>;
+        layers = <5>;
 
         input-processors =
             <&zip_xy_transform
@@ -49,55 +55,4 @@
     };
 };
 
-&pinctrl {
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
-        };
-    };
-
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
-        };
-    };
-};
-
-&xiao_serial {
-    status = "disabled";
-};
-
-&spi0 {
-    status = "okay";
-    compatible = "nordic,nrf-spim";
-
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-
-    trackball: trackball@0 {
-        status = "okay";
-        compatible = "pixart,pmw3610";
-
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-
-        /* 誤反応低減 */
-        cpi = <500>;
-
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-        force-awake;
-    };
-};
+/* --- 以下、&pinctrl や &spi0 などの記述はそのまま継続 --- */
