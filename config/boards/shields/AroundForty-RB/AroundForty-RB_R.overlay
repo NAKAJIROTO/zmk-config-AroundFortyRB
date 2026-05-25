@@ -24,24 +24,6 @@
     require-prior-idle-ms = <200>;
 };
 
-&spi0 {
-    status = "okay";
-
-    cs-gpios = <&xiao_d 1 GPIO_ACTIVE_LOW>;
-
-    trackball: trackball@0 {
-        compatible = "pixart,pmw3610";
-
-        reg = <0>;
-
-        spi-max-frequency = <2000000>;
-
-        irq-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-        status = "okay";
-    };
-};
-
 / {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
@@ -50,11 +32,7 @@
 
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT)>,
-
-            /* カーソル速度 */
             <&zip_xy_scaler 1 1>,
-
-            /* Auto mouse layer */
             <&zip_temp_layer 4 300>;
     };
 
@@ -68,7 +46,20 @@
 
             <&zip_xy_to_scroll_mapper>,
 
-            /* スクロール速度 */
             <&zip_scroll_scaler 1 80>;
+    };
+};
+
+&spi0 {
+    trackball: trackball@0 {
+        compatible = "pixart,pmw3610";
+
+        reg = <0>;
+
+        spi-max-frequency = <2000000>;
+
+        irq-gpios = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+
+        status = "okay";
     };
 };
