@@ -115,6 +115,14 @@
 
             tap-ms = <20>;
         };
+ls: layer_space {
+compatible = “zmk,behavior-hold-tap”;
+#binding-cells = <2>;
+tapping-term-ms = <100>;
+quick-tap-ms = <0>;
+flavor = “hold-preferred”;
+bindings = <&mo>, <&kp>;
+};
     };
 
     keymap {
