@@ -96,16 +96,42 @@
         };
     };
 
+/ {
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
+
+        /* Space / Layer */
+        ls: layer_space {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+
+            flavor = "balanced";
+
+            tapping-term-ms = <180>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <150>;
+
+            bindings = <&mo>, <&kp>;
         };
 
+        /* TapでLayer0へ戻る / HoldでLayer */
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+
+            label = "LAYER_TAP_TO_0";
+
+            #binding-cells = <2>;
+
+            flavor = "balanced";
+
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            require-prior-idle-ms = <150>;
+
+            bindings = <&mo>, <&to_layer_0>;
+        };
+    };
+};
         // 
 
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
