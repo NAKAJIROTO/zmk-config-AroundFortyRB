@@ -96,43 +96,27 @@
         };
     };
 
-behaviors {
 
-    lt_to_layer_0: lt_to_layer_0 {
-        compatible = "zmk,behavior-hold-tap";
+    behaviors {
+        lt_to_layer_0: lt_to_layer_0 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
 
-        label = "LAYER_TAP_TO_0";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
 
-        #binding-cells = <2>;
+        // 
 
-        tapping-term-ms = <200>;
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-        bindings = <&mo>, <&to>;
+            tap-ms = <20>;
+        };
     };
-
-    scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-        compatible = "zmk,behavior-sensor-rotate";
-
-        #sensor-binding-cells = <0>;
-
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-        tap-ms = <20>;
-    };
-
-    ls: layer_space {
-        compatible = "zmk,behavior-hold-tap";
-
-        #binding-cells = <2>;
-
-        tapping-term-ms = <100>;
-        quick-tap-ms = <0>;
-
-        flavor = "hold-preferred";
-
-        bindings = <&mo>, <&kp>;
-    };
-};
 
     keymap {
         compatible = "zmk,keymap";
