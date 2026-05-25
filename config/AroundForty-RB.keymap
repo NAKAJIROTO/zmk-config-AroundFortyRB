@@ -96,7 +96,6 @@
         };
     };
 
-
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
@@ -126,16 +125,17 @@
             bindings = <
 &kp Q      &kp W         &kp E              &kp R                       &kp T                     &kp Y        &kp U  &kp I       &kp O    &kp P
 &kp A      &kp S         &kp D              &kp F                       &kp G                     &kp H        &kp J  &kp K       &kp L    &kp MINUS
-&kp Z      &kp X         &kp C              &kp V                       &kp B        &mo 5        &kp N        &kp M  &none       &kp TAB  &kp LS(TAB)
-&kp LSHFT  &kp LEFT_GUI  &mt LEFT_ALT DOWN  &mt LEFT_CONTROL BACKSPACE  &lt 2 SPACE  &lt 1 ENTER  &lt 1 ENTER  &mo 5  &lt 3 DOWN  &kp DEL  &kp BACKSPACE
+&kp Z      &kp X         &kp C              &kp V                       &kp B        &mo 2        &kp N        &kp M  &none       &kp TAB  &kp LS(TAB)
+&kp LSHFT  &kp LEFT_GUI  &mt LEFT_ALT DOWN  &mt LEFT_CONTROL BACKSPACE  &lt 4 SPACE  &lt 3 ENTER  &lt 3 ENTER  &mo 2  &lt 5 DOWN  &kp DEL  &kp BACKSPACE
             >;
         };
+
         MOUSE {
             bindings = <
-&trans  &trans  &trans    &trans    &trans          &trans  &trans  &trans    &trans    &mo 3
-&trans  &trans  &mkp MB1  &mkp MB2  &trans          &trans  &trans  &mkp MB1  &mkp MB2  &mo 3
+&trans  &trans  &trans    &trans    &trans          &trans  &trans  &trans    &trans    &mo 2
+&trans  &trans  &mkp MB1  &mkp MB2  &trans          &trans  &trans  &mkp MB1  &mkp MB2  &mo 2
 &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans  &mkp MB1  &trans    &trans
-&trans  &trans  &trans    &trans    &trans  &mo 5   &trans  &trans  &trans    &trans    &trans
+&trans  &trans  &trans    &trans    &trans  &mo 2   &trans  &trans  &trans    &trans    &trans
             >;
         };
 
@@ -147,6 +147,7 @@
 &bootloader  &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans  &bootloader
             >;
         };
+
         NUM {
             display-name = "1";
             bindings = <
@@ -176,8 +177,6 @@
 &trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
-
-
     };
 };
 
