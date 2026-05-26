@@ -20,11 +20,7 @@
         , <&gpio0  10 GPIO_ACTIVE_HIGH>
         ;
 };
-&zip_temp_layer {
-    excluded-positions = <
-        28 // MB1
-    >;
-};
+
 
 / {
 
