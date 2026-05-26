@@ -8,6 +8,9 @@
     col-offset = <6>;
 };
 
+&zip_temp_layer {
+};
+
 &kscan0 {
     col-gpios
         = <&xiao_d 10 GPIO_ACTIVE_HIGH>
