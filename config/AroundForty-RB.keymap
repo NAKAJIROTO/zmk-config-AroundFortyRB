@@ -148,20 +148,20 @@
         FUNCTION {
             display-name = "2";
             bindings = <
-&kp AT_SIGN   &kp UNDERSCORE  &kp EXCLAMATION       &kp HASH              &kp DOLLAR                     &kp F1            &kp F2    &kp F3     &kp F4     &kp F5
-&kp PERCENT   &kp QUESTION    &kp AMPERSAND         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6            &kp F7    &kp F8     &kp F9     &kp F10
-&kp ASTERISK  &kp PIPE        &kp NON_US_BACKSLASH  &kp SQT               &kp DOUBLE_QUOTES      &trans  &kp LEFT_BRACKET  &kp SEMI  &kp COLON  &kp COMMA  &kp DOT
-&trans        &trans          &trans                &trans                &trans                 &trans  &trans            &trans    &trans     &trans     &trans
+&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION       &kp QUESTION          &kp DOLLAR                     &kp F1            &kp F2    &kp F3     &kp F4     &kp F5
+&kp PERCENT  &kp HASH        &kp AMPERSAND         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6            &kp F7    &kp F8     &kp F9     &kp F10
+&kp HASH     &kp PIPE        &kp NON_US_BACKSLASH  &kp SQT               &kp DOUBLE_QUOTES      &trans  &kp LEFT_BRACKET  &kp SEMI  &kp COLON  &kp COMMA  &kp DOT
+&trans       &trans          &trans                &trans                &trans                 &trans  &trans            &trans    &trans     &trans     &trans
             >;
         };
 
         ARROW {
             display-name = "3";
             bindings = <
-&sum    &kp PRINTSCREEN  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&sum    &kp PRINTSCREEN  &trans  &trans  &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans  &trans  &trans
+&trans  &trans           &trans  &trans  &trans          &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans  &trans  &trans
+&trans  &trans           &trans  &trans  &trans  &trans  &kp LS(COMMA)     &kp LS(DOT)        &trans  &trans  &trans
+&trans  &trans           &trans  &trans  &trans  &trans  &trans            &trans             &trans  &trans  &trans
             >;
         };
 
@@ -179,7 +179,7 @@
 &trans       &trans  &trans  &trans  &trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans
 &trans       &trans  &trans  &trans  &trans          &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR    &trans  &trans
 &trans       &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans  &trans
-&bootloader  &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans  &bootloader
+&bootloader  &trans  &trans  &trans  &trans  &mo 5   &trans        &trans        &trans        &trans  &bootloader
             >;
         };
     };
