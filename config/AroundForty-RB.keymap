@@ -21,7 +21,7 @@
         };
 
         RIGHT1 {
-            bindings = <&kp LC(RIGHT_ARROW)>;
+            bindings = <&kp RIGHT_ARROW>;
             key-positions = <17 8>;
         };
 
