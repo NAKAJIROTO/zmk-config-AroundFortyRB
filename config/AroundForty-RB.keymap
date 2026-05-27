@@ -57,25 +57,19 @@
             key-positions = <9 8>;
         };
 
-BM1 {
-    bindings = <&mb1_click>;
-    key-positions = <17 18>;
+        BM1 {
+            bindings = <&mb1_click>;
+            key-positions = <17 18>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+        };
 
-    timeout-ms = <30>;
-    require-prior-idle-ms = <100>;
-};
-
-BM2 {
-    bindings = <&mb2_click>;
-    key-positions = <18 19>;
-
-    timeout-ms = <30>;
-    require-prior-idle-ms = <100>;
-};
-
-
-
-
+        BM2 {
+            bindings = <&mb2_click>;
+            key-positions = <18 19>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+        };
     };
 
     macros {
@@ -162,7 +156,7 @@ BM2 {
             bindings = <
 &kp Q      &kp W     &kp E          &kp R                &kp T                     &kp Y        &kp U  &kp I       &kp O    &kp P
 &kp A      &kp S     &kp D          &kp F                &kp G                     &kp H        &kp J  &kp K       &kp L    &kp MINUS
-&kp Z      &kp X     &kp C          &kp V                &kp B        &mo 5        &kp N        &kp M  &kp COMMA   &kp DOT  &kp SLASH
+&kp Z      &kp X     &kp C          &kp V                &kp B        &mo 5        &kp N        &kp M  &mkp MB1    &mo 5    &mkp MB2
 &kp LSHFT  &kp LGUI  &mt LALT DOWN  &mt LCTRL BACKSPACE  &lt 2 SPACE  &lt 1 ENTER  &lt 1 ENTER  &mo 5  &lt 3 DOWN  &kp TAB  &kp LS(TAB)
             >;
         };
