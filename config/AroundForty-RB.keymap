@@ -56,6 +56,16 @@
             bindings = <&kp DELETE>;
             key-positions = <9 8>;
         };
+
+        MB1 {
+            bindings = <&mb1_click>;
+            key-positions = <17 18>;
+        };
+
+        MB2 {
+            bindings = <&mb2_click>;
+            key-positions = <18 19>;
+        };
     };
 
     macros {
@@ -99,26 +109,18 @@
             #binding-cells = <0>;
             bindings = <&kp LS(LBKT) &kp LS(RBKT) &kp LEFT>;
         };
-mb1_click: mb1_click {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
 
-    bindings = <
-        &mkp MB1
-    >;
-};
+        mb1_click: mb1_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1>;
+        };
 
-mb2_click: mb2_click {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-
-    bindings = <
-        &mkp MB2
-    >;
-};
-
-
-
+        mb2_click: mb2_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB2>;
+        };
     };
 
     behaviors {
