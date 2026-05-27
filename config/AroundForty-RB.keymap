@@ -30,10 +30,10 @@
             key-positions = <16 7>;
         };
 
-        KANA {
-            bindings = <&kp LA(GRAVE)>;
-            key-positions = <3 4>;
-        };
+KANA {
+    bindings = <&kp GRAVE>;
+    key-positions = <3 4>;
+};
 
         CAPSS {
             bindings = <&kp CAPS>;
