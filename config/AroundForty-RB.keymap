@@ -53,7 +53,7 @@
         };
 
         DELL {
-            bindings = <&kt DELETE>;
+            bindings = <&kp DELETE>;
             key-positions = <8 9>;
         };
 
