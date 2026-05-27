@@ -99,6 +99,26 @@
             #binding-cells = <0>;
             bindings = <&kp LS(LBKT) &kp LS(RBKT) &kp LEFT>;
         };
+mb1_click: mb1_click {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+
+    bindings = <
+        &mkp MB1
+    >;
+};
+
+mb2_click: mb2_click {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+
+    bindings = <
+        &mkp MB2
+    >;
+};
+
+
+
     };
 
     behaviors {
