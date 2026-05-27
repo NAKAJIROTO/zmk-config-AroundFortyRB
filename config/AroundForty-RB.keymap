@@ -54,7 +54,7 @@
 
         hiiii {
             bindings = <&kp A>;
-            key-positions = <28 18 9>;
+            key-positions = <36 0>;
         };
     };
 
