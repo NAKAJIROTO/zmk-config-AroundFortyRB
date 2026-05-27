@@ -43,11 +43,7 @@
     };
 };
 
-&zip_temp_layer {
-    excluded-positions = <
-        36
-    >;
-};
+
 
 &pinctrl {
     spi0_default: spi0_default {
