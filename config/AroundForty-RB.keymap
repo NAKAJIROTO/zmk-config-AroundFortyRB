@@ -64,12 +64,13 @@
             require-prior-idle-ms = <100>;
         };
 
-        BM2 {
-            bindings = <&mb2_click>;
-            key-positions = <18 19>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <100>;
-        };
+BM2 {
+    bindings = <&mkp MB2>;
+    key-positions = <18 19>;
+
+    timeout-ms = <30>;
+    require-prior-idle-ms = <100>;
+};
     };
 
     macros {
