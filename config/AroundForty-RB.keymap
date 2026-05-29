@@ -149,6 +149,18 @@ BM2 {
             #binding-cells = <0>;
             bindings = <&mkp MB2>;
         };
+
+        excel_values: excel_values {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+
+            bindings
+                = <&macro_tap &kp LALT>
+                , <&macro_tap &kp H>
+                , <&macro_tap &kp V>
+                , <&macro_tap &kp V>;
+        };
+
     };
 
     behaviors {
