@@ -3,7 +3,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE       AT                // "
 #define JP_AMPERSAND    CARET             // &
 #define JP_QUOTE        AMPERSAND         // '
@@ -27,6 +29,7 @@
 #define JP_KANA         LANGUAGE_1        // かな
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
+
 &mt {
     flavor = "balanced";
     tapping-term-ms = <150>;
@@ -54,7 +57,7 @@
         };
 
         KANA {
-            bindings = <&kp LA(GRAVE)>;
+            bindings = <&imetog>;
             key-positions = <3 4>;
         };
 
@@ -87,13 +90,12 @@
             require-prior-idle-ms = <100>;
         };
 
-BM2 {
-    bindings = <&mkp MB2>;
-    key-positions = <18 19>;
-
-    timeout-ms = <30>;
-    require-prior-idle-ms = <100>;
-};
+        BM2 {
+            bindings = <&mkp MB2>;
+            key-positions = <18 19>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <100>;
+        };
     };
 
     macros {
@@ -153,14 +155,30 @@ BM2 {
         excel_values: excel_values {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-
-            bindings
-                = <&macro_tap &kp LALT>
-                , <&macro_tap &kp H>
-                , <&macro_tap &kp V>
-                , <&macro_tap &kp V>;
+            bindings =
+                <&macro_tap>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp H>,
+                <&macro_tap>,
+                <&kp V>,
+                <&macro_tap>,
+                <&kp V>;
         };
 
+        imetog: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_press>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "NEW_MACRO";
+        };
     };
 
     behaviors {
@@ -210,10 +228,10 @@ BM2 {
         FUNCTION {
             display-name = "2";
             bindings = <
-&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION       &kp QUESTION          &kp DOLLAR                     &kp F1            &kp F2         &kp F3     &kp F4     &kp F5
-&kp PERCENT  &kp HASH        &kp AMPERSAND         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6            &kp F7         &kp F8     &kp F9     &kp F10
-&kp HASH     &kp PIPE        &kp NON_US_BACKSLASH  &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES      &trans  &kp LEFT_BRACKET  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
-&trans       &trans          &trans                &trans                &trans                 &trans  &trans            &trans         &trans     &trans     &trans
+&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION       &kp QUESTION          &kp DOLLAR                     &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
+&kp PERCENT  &kp HASH        &kp AMPERSAND         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
+&kp HASH     &kp PIPE        &kp NON_US_BACKSLASH  &excel_values         &kp DOUBLE_QUOTES      &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
+&trans       &trans          &trans                &trans                &trans                 &trans  &trans      &trans         &trans     &trans     &trans
             >;
         };
 
