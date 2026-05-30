@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_LBRACKET2 LS(JP_LBRACKET)   // 【
 #define JP_RBRACKET2 LS(JP_RBRACKET)   // 】
 #define JP_DQUOTE       AT                // "
@@ -121,13 +122,6 @@
             label = "ENTENT";
         };
 
-        cal: cal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(NUMBER_1)>;
-            label = "CAL";
-        };
-
         sum: sum {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -138,7 +132,7 @@
         jp_kakko: jp_kakko {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LBKT) &kp LS(RBKT) &kp LEFT>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
         };
 
         mb1_click: mb1_click {
@@ -231,7 +225,7 @@
             bindings = <
 &kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION       &kp QUESTION          &kp BACKSLASH                  &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
 &kp TILDE    &kp PERCENT     &kp AMPERSAND         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
-&kp LC(Z)    &kp PIPE        &kp NON_US_BACKSLASH  &excel_values         &kp DOUBLE_QUOTES      &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
+&kp LC(Z)    &kp PIPE        &kp NON_US_BACKSLASH  &excel_values         &jp_kakko              &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
 &trans       &trans          &trans                &trans                &trans                 &trans  &trans      &trans         &trans     &trans     &trans
             >;
         };
