@@ -170,7 +170,7 @@
                 <&macro_press>,
                 <&kp GRAVE>,
                 <&macro_release>,
-                <&kp LEFT_ALT>;
+                <&kp GRAVE &kp LEFT_ALT>;
 
             label = "NEW_MACRO";
         };
