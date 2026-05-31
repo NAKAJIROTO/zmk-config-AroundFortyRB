@@ -99,10 +99,12 @@
             require-prior-idle-ms = <100>;
         };
 
-        MO5 {
-            bindings = <&mo 5>;
-            key-positions = <8 9>;
-        };
+MO5 {
+    timeout-ms = <50>;
+    slow-release;
+    key-positions = <8 9>;
+    bindings = <&mo 5>;
+};
     };
 
     macros {
