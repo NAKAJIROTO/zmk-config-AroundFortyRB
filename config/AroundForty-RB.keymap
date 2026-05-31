@@ -80,11 +80,6 @@
             layers = <1>;
         };
 
-        DELL {
-            bindings = <&kp DELETE>;
-            key-positions = <9 8>;
-        };
-
         BM1 {
             bindings = <&mb1_click>;
             key-positions = <17 18>;
@@ -99,12 +94,12 @@
             require-prior-idle-ms = <100>;
         };
 
-MO5 {
-    timeout-ms = <50>;
-    slow-release;
-    key-positions = <8 9>;
-    bindings = <&mo 5>;
-};
+        MO5 {
+            timeout-ms = <50>;
+            slow-release;
+            key-positions = <8 9>;
+            bindings = <&mo 5>;
+        };
     };
 
     macros {
