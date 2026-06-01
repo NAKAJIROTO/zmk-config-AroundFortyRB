@@ -153,6 +153,13 @@
 
             label = "NEW_MACRO";
         };
+
+        kakko2: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+            label = "NEW_MACRO";
+        };
     };
 
     behaviors {
@@ -182,10 +189,10 @@
         Default {
             display-name = "0";
             bindings = <
-&kp Q      &kp W     &kp E         &kp R                 &kp T                     &kp Y        &kp U  &kp I       &kp O    &kp P
-&kp A      &kp S     &kp D         &kp F                 &kp G                     &kp H        &kp J  &kp K       &kp L    &kp MINUS
-&kp Z      &kp X     &kp C         &kp V                 &kp B        &mo 5        &kp N        &kp M  &mkp MB1    &kp TAB  &kp LS(TAB)
-&kp LSHFT  &kp LGUI  &kp LEFT_ALT  &mt LEFT_CONTROL DEL  &lt 2 SPACE  &lt 1 ENTER  &lt 1 ENTER  &mo 5  &lt 3 DOWN  &kp TAB  &kp LS(TAB)
+&kp Q      &kp W     &kp E         &kp R                       &kp T                     &kp Y        &kp U  &kp I       &kp O    &kp P
+&kp A      &kp S     &kp D         &kp F                       &kp G                     &kp H        &kp J  &kp K       &kp L    &kp MINUS
+&kp Z      &kp X     &kp C         &kp V                       &kp B        &mo 5        &kp N        &kp M  &mkp MB1    &kp TAB  &kp LS(TAB)
+&kp LSHFT  &kp LGUI  &kp LEFT_ALT  &mt LEFT_CONTROL BACKSPACE  &lt 2 SPACE  &lt 1 ENTER  &lt 1 ENTER  &mo 5  &lt 3 DOWN  &kp TAB  &kp LS(TAB)
             >;
         };
 
@@ -202,20 +209,20 @@
         FUNCTION {
             display-name = "2";
             bindings = <
-&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION          &kp QUESTION                   &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
-&kp TILDE    &kp PERCENT     &kp AMPERSAND    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
-&kp LC(Z)    &kp LC(UP)      &kp LC(DOWN)     &excel_values         &jp_kakko              &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
-&trans       &trans          &trans           &trans                &trans                 &trans  &trans      &trans         &trans     &trans     &trans
+&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION   &kp SLASH          &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
+&kp TILDE    &kp PERCENT     &kp AMPERSAND    &kp AMPERSAND  &kakko2            &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
+&kp LC(Z)    &kp LC(UP)      &kp LC(DOWN)     &excel_values  &jp_kakko  &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
+&trans       &trans          &trans           &trans         &trans     &trans  &trans      &trans         &trans     &trans     &trans
             >;
         };
 
         ARROW {
             display-name = "3";
             bindings = <
-&sum    &kp PRINTSCREEN  &trans  &trans  &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans  &trans  &trans
-&trans  &trans           &trans  &trans  &trans          &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans  &trans  &trans
-&trans  &trans           &trans  &trans  &trans  &trans  &trans            &trans             &trans  &trans  &trans
-&trans  &trans           &trans  &trans  &trans  &trans  &trans            &trans             &trans  &trans  &trans
+&sum    &kp PRINTSCREEN  &trans  &trans  &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HASH          &kp CARET          &kp AMPERSAND
+&trans  &trans           &trans  &trans  &trans          &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans
+&trans  &trans           &trans  &trans  &trans  &trans  &kp LESS_THAN     &kp GREATER_THAN   &kp DOLLAR        &kp PIPE           &trans
+&trans  &trans           &trans  &trans  &trans  &trans  &trans            &trans             &trans            &trans             &trans
             >;
         };
 
