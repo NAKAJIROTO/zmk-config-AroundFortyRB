@@ -181,7 +181,6 @@
 
             label = "NEW_MACRO";
         };
-
     };
 
     behaviors {
@@ -203,9 +202,7 @@
 
             tap-ms = <20>;
         };
-
-};
-
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -223,7 +220,7 @@
         NUM {
             display-name = "1";
             bindings = <
-&kp EQUAL  &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY   &kp PIPE                   &kp N7  &kp N8  &kp N9      &kp N0  &kp KP_SLASH
+&kp EQUAL  &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &kp BACKSLASH                 &kp N7  &kp N8  &kp N9      &kp N0  &kp KP_SLASH
 &entent    &kp LEFT     &kp UP        &kp RIGHT        &kp F9                        &kp N4  &kp N5  &kp N6      &oo     &trans
 &kp LC(F)  &kp LG(N1)   &kp LC(C)     &kp LC(V)        &kp LC(SINGLE_QUOTE)  &trans  &kp N1  &kp N2  &kp N3      &trans  &trans
 &trans     &trans       &trans        &trans           &trans                &trans  &trans  &trans  &lt 5 DOWN  &trans  &trans
@@ -233,7 +230,7 @@
         FUNCTION {
             display-name = "2";
             bindings = <
-&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION          &kp  JP_YEN                   &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
+&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION          &kp JP_YEN                     &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
 &kp TILDE    &kp PERCENT     &kp AMPERSAND    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
 &kp LC(Z)    &kp LC(UP)      &kp LC(DOWN)     &excel_values         &jp_kakko              &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
 &trans       &trans          &trans           &trans                &trans                 &trans  &trans      &trans         &trans     &trans     &trans
