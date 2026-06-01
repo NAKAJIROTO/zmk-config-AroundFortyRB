@@ -111,7 +111,7 @@
         jp_kakko: jp_kakko {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            bindings = <&kp K &kp A &kp K &kp K &kp O &kp SPACE &kp ENTER &kp LEFT>;
         };
 
         mb1_click: mb1_click {
