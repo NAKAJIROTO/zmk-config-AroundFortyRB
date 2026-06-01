@@ -140,7 +140,7 @@
                 <&kp V>;
         };
 
-        imetog: new_macro {
+        imetog: imetog {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -154,7 +154,7 @@
             label = "NEW_MACRO";
         };
 
-        kakko2: new_macro {
+        kakko2: kakko2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
