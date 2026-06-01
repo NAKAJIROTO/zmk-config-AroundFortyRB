@@ -212,7 +212,7 @@ macros {
             <&macro_release &kp LALT>;
     };
 };
-    };
+
 
     keymap {
         compatible = "zmk,keymap";
