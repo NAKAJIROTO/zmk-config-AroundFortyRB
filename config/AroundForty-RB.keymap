@@ -182,16 +182,6 @@
             label = "NEW_MACRO";
         };
 
-yen_macro: yen_macro {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &kp LALT>
-        <&kp KP0 &kp KP1 &kp KP6 &kp KP5>
-        <&macro_release &kp LALT>;
-};
-
-
     };
 
     behaviors {
@@ -243,7 +233,7 @@ yen_macro: yen_macro {
         FUNCTION {
             display-name = "2";
             bindings = <
-&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION          &kp INT_YEN                    &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
+&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION          &kp  JP_YEN                   &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
 &kp TILDE    &kp PERCENT     &kp AMPERSAND    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
 &kp LC(Z)    &kp LC(UP)      &kp LC(DOWN)     &excel_values         &jp_kakko              &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
 &trans       &trans          &trans           &trans                &trans                 &trans  &trans      &trans         &trans     &trans     &trans
