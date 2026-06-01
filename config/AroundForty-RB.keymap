@@ -153,13 +153,6 @@
 
             label = "NEW_MACRO";
         };
-
-        kakko2: kakko2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
-            label = "NEW_MACRO";
-        };
     };
 
     behaviors {
@@ -209,10 +202,10 @@
         FUNCTION {
             display-name = "2";
             bindings = <
-&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION   &kp SLASH          &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
-&kp TILDE    &kp PERCENT     &kp AMPERSAND    &kp PIPE       &kakko2            &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
-&kp LC(Z)    &kp LC(UP)      &kp LC(DOWN)     &excel_values  &jp_kakko  &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
-&trans       &trans          &trans           &trans         &trans     &trans  &trans      &trans         &trans     &trans     &trans
+&kp AT_SIGN  &kp UNDERSCORE  &kp EXCLAMATION  &kp QUESTION          &kp SLASH                      &kp F1      &kp F2         &kp F3     &kp F4     &kp F5
+&kp TILDE    &kp PERCENT     &kp AMPERSAND    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS          &kp F6      &kp F7         &kp F8     &kp F9     &kp F10
+&kp LC(Z)    &kp LC(UP)      &kp LC(DOWN)     &excel_values         &jp_kakko              &trans  &kp LG(N2)  &kp SEMICOLON  &kp COLON  &kp COMMA  &kp DOT
+&trans       &trans          &trans           &trans                &trans                 &trans  &trans      &trans         &trans     &trans     &trans
             >;
         };
 
@@ -221,7 +214,7 @@
             bindings = <
 &sum    &kp PRINTSCREEN  &trans  &trans  &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp HASH          &kp CARET          &kp AMPERSAND
 &trans  &trans           &trans  &trans  &trans          &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &trans
-&trans  &trans           &trans  &trans  &trans  &trans  &kp LESS_THAN     &kp GREATER_THAN   &kp DOLLAR        &trans             &trans
+&trans  &trans           &trans  &trans  &trans  &trans  &kp LESS_THAN     &kp GREATER_THAN   &kp DOLLAR        &kp PIPE           &trans
 &trans  &trans           &trans  &trans  &trans  &trans  &trans            &trans             &trans            &trans             &trans
             >;
         };
