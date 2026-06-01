@@ -182,14 +182,14 @@
             label = "NEW_MACRO";
         };
 
-    yen_macro: yen_macro {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings =
-            <&macro_press &kp LALT>
-            <&kp KP0 &kp KP1 &kp KP6 &kp KP5>
-            <&macro_release &kp LALT>;
-    };
+yen_macro: yen_macro {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &kp LALT>
+        <&kp KP0 &kp KP1 &kp KP6 &kp KP5>
+        <&macro_release &kp LALT>;
+};
 
 
     };
