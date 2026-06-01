@@ -220,7 +220,7 @@
         NUM {
             display-name = "1";
             bindings = <
-&kp EQUAL  &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &kp KP_DIVIDE                 &kp N7  &kp N8  &kp N9      &kp N0  &kp KP_SLASH
+&kp EQUAL  &kp KP_PLUS  &kp KP_MINUS  &kp KP_MULTIPLY  &kp JP_YEN                    &kp N7  &kp N8  &kp N9      &kp N0  &kp KP_SLASH
 &entent    &kp LEFT     &kp UP        &kp RIGHT        &kp F9                        &kp N4  &kp N5  &kp N6      &oo     &trans
 &kp LC(F)  &kp LG(N1)   &kp LC(C)     &kp LC(V)        &kp LC(SINGLE_QUOTE)  &trans  &kp N1  &kp N2  &kp N3      &trans  &trans
 &trans     &trans       &trans        &trans           &trans                &trans  &trans  &trans  &lt 5 DOWN  &trans  &trans
