@@ -31,10 +31,7 @@
             key-positions = <16 7>;
         };
 
-        KANA {
-            bindings = <&imetog>;
-            key-positions = <3 4>;
-        };
+
 
         CAPSS {
             bindings = <&kp CAPS>;
